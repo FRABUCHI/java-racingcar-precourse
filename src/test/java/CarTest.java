@@ -6,7 +6,7 @@ class CarTest {
 
     @Test
     void runTest() {
-        Car car = new Car();
+        Car car = new Car("weekend");
         CarStatus carStatus = car.run();
         assertTrue(carStatus == CarStatus.FORWARD || carStatus == CarStatus.STOP);
     }

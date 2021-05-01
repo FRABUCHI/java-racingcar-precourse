@@ -1,8 +1,17 @@
 public class Car {
 
-    private final int MAX_RPM = 9;
+
+    private final String name;
+
+    public Car(String name) {
+        this.name = name;
+    }
 
     public CarStatus run() {
         return new Engine().start();
+    }
+
+    public String getName() {
+        return name;
     }
 }

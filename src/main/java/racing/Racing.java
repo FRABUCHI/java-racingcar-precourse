@@ -1,4 +1,8 @@
-import java.util.ArrayList;
+package racing;
+
+import car.Car;
+import car.Cars;
+
 import java.util.List;
 
 public class Racing {
@@ -17,11 +21,10 @@ public class Racing {
         return lab;
     }
 
-    public List<CarStatus> start(Cars cars) {
-        List<CarStatus> carStatusList = new ArrayList<CarStatus>();
+    public RacingSituation start(Cars cars) {
         for (Car car : cars.getCars()) {
-            carStatusList.add(car.run());
+            car.run();
         }
-        return carStatusList;
+        return new RacingSituation(cars);
     }
 }

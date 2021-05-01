@@ -1,4 +1,9 @@
+import car.Car;
+import car.CarStatus;
+import car.Cars;
 import org.junit.jupiter.api.Test;
+import racing.Racing;
+import racing.RacingSituation;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,9 +32,10 @@ public class RacingTest {
         Racing racing = new Racing(3);
         List<Car> carList = Arrays.asList(new Car("weekend"), new Car("week"), new Car("end"));
         Cars cars = racing.createCarsList(carList);
-        List<CarStatus> carStatusList = racing.start(cars);
-        for (CarStatus carStatus : carStatusList) {
+        RacingSituation racingSituation = racing.start(cars);
+        for (CarStatus carStatus : racingSituation.getRacingSituation()) {
             assertTrue(carStatus == CarStatus.FORWARD || carStatus == CarStatus.STOP);
         }
     }
+
 }

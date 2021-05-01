@@ -21,4 +21,15 @@ public class RacingTest {
         int lab = racing.getLab();
         assertEquals(3, lab);
     }
+
+    @Test
+    void LAB_단위_자동차별_전진_또는_멈춤() {
+        Racing racing = new Racing(3);
+        List<Car> carList = Arrays.asList(new Car("weekend"), new Car("week"), new Car("end"));
+        Cars cars = racing.createCarsList(carList);
+        List<CarStatus> carStatusList = racing.start(cars);
+        for (CarStatus carStatus : carStatusList) {
+            assertTrue(carStatus == CarStatus.FORWARD || carStatus == CarStatus.STOP);
+        }
+    }
 }

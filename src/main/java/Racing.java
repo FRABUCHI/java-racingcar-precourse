@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Racing {
@@ -9,11 +10,18 @@ public class Racing {
     }
 
     public Cars createCarsList(List<Car> carList) {
-        Cars cars = new Cars(carList);
-        return cars;
+        return new Cars(carList);
     }
 
     public int getLab() {
         return lab;
+    }
+
+    public List<CarStatus> start(Cars cars) {
+        List<CarStatus> carStatusList = new ArrayList<CarStatus>();
+        for (Car car : cars.getCars()) {
+            carStatusList.add(car.run());
+        }
+        return carStatusList;
     }
 }

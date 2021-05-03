@@ -28,7 +28,7 @@ public class RacingTest {
 
     @Test
     void LAB_단위_자동차별_전진_또는_멈춤() {
-        Racing racing = new Racing(3);
+        Racing racing = new Racing(5);
         List<Car> carList = Arrays.asList(new Car("weekend"), new Car("week"), new Car("end"));
         Cars cars = racing.createCarsList(carList);
         do {
@@ -36,5 +36,18 @@ public class RacingTest {
             racing.showRacingSituation(cars);
         } while (racing.isNotOver());
     }
+
+    @Test
+    void 우승자_발표() {
+        Racing racing = new Racing(3);
+        List<Car> carList = Arrays.asList(new Car("weekend"), new Car("week"), new Car("end"));
+        Cars cars = racing.createCarsList(carList);
+        do {
+            cars = racing.start(cars);
+            racing.showRacingSituation(cars);
+        } while (racing.isNotOver());
+        racing.announceWinner(cars);
+    }
+
 
 }

@@ -17,4 +17,5 @@ class CarTest {
         CarStatus carStatus = car.run();
         assertTrue(carStatus == CarStatus.FORWARD || carStatus == CarStatus.STOP);
     }
+
 }

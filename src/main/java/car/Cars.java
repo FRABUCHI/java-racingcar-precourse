@@ -16,10 +16,10 @@ public class Cars {
 
     @Override
     public String toString() {
-        String carList = "";
+        StringBuilder carList = new StringBuilder();
         for (Car car : cars) {
-            carList += car.getName();
+            carList.append(car.getName());
         }
-        return carList;
+        return carList.toString();
     }
 }

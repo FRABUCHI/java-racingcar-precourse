@@ -1,3 +1,5 @@
+package racing;
+
 import car.Car;
 import car.Cars;
 import org.junit.jupiter.api.Test;

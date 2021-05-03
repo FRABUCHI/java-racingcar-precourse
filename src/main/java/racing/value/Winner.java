@@ -12,6 +12,7 @@ public class Winner {
         for (Car car : winnerList) {
             winner += car.getName() + ", ";
         }
+        System.out.println("Winner: " + winner);
         winner = winner.substring(0, winner.length() - 2);
     }
 

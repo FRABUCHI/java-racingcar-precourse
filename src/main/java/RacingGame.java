@@ -6,12 +6,12 @@ public class RacingGame {
     public void start() {
         Racing racing = new Racing();
         racing.inputLab();
-        Cars cars = racing.createCarsList();
+        racing.createCarsList();
         do {
-            cars = racing.start(cars);
-            racing.showRacingSituation(cars);
+            racing.start();
+            racing.showRacingSituation();
         } while (racing.isNotOver());
-        racing.announceWinner(cars);
+        racing.announceWinner();
     }
 
 }

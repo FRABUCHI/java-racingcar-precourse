@@ -1,15 +1,10 @@
 package racing;
 
-import car.Car;
 import car.Cars;
 import org.junit.jupiter.api.Test;
-import racing.Racing;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -66,8 +61,8 @@ public class RacingTest {
         racing.inputLab();
 
         do {
-            cars = racing.start(cars);
-            racing.showRacingSituation(cars);
+            racing.start();
+            racing.showRacingSituation();
         } while (racing.isNotOver());
     }
 
@@ -88,10 +83,10 @@ public class RacingTest {
         racing.inputLab();
 
         do {
-            cars = racing.start(cars);
-            racing.showRacingSituation(cars);
+            racing.start();
+            racing.showRacingSituation();
         } while (racing.isNotOver());
-        racing.announceWinner(cars);
+        racing.announceWinner();
     }
 
 

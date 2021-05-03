@@ -1,9 +1,9 @@
-package car;
+package domain;
 
-import car.value.CarName;
-import car.value.CarStatus;
-import car.value.MoveDistance;
-import car.value.Rpm;
+import domain.value.CarName;
+import domain.value.CarStatus;
+import domain.value.MoveDistance;
+import domain.value.Rpm;
 
 public class Car {
 

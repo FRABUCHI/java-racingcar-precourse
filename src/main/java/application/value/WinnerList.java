@@ -1,7 +1,7 @@
-package racing.value;
+package application.value;
 
-import car.Car;
-import car.Cars;
+import domain.Car;
+import domain.Cars;
 
 import java.util.ArrayList;
 import java.util.List;

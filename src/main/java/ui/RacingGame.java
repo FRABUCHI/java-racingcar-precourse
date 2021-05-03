@@ -1,7 +1,9 @@
-import car.CarNames;
-import racing.Racing;
-import racing.value.Lab;
-import racing.value.Winner;
+package ui;
+
+import domain.CarNames;
+import application.Racing;
+import application.value.Lab;
+import application.value.Winner;
 
 public class RacingGame {
 

@@ -1,7 +1,7 @@
-package car;
+package domain;
 
-import car.value.CarName;
-import car.value.CarStatus;
+import domain.value.CarName;
+import domain.value.CarStatus;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

@@ -1,9 +1,9 @@
-package racing;
+package application;
 
-import car.CarNames;
+import domain.CarNames;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import racing.value.Lab;
+import application.value.Lab;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

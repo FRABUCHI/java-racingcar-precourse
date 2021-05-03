@@ -1,4 +1,4 @@
-package racing.value;
+package application.value;
 
 public class MaxDistance {
 

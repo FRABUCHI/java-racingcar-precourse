@@ -1,4 +1,4 @@
-package car.value;
+package domain.value;
 
 import java.util.ArrayList;
 import java.util.List;

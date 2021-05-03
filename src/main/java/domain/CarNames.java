@@ -1,7 +1,7 @@
-package car;
+package domain;
 
-import car.value.CarName;
-import car.value.CarNameList;
+import domain.value.CarName;
+import domain.value.CarNameList;
 
 public class CarNames {
 

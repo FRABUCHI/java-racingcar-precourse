@@ -1,4 +1,4 @@
-package car.value;
+package domain.value;
 
 public class CarName {
 

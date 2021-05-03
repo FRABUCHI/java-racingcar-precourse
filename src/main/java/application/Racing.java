@@ -1,11 +1,11 @@
-package racing;
+package application;
 
-import car.Car;
-import car.CarNames;
-import car.Cars;
-import car.value.CarName;
-import car.value.CarNameList;
-import racing.value.*;
+import application.value.*;
+import domain.Car;
+import domain.CarNames;
+import domain.Cars;
+import domain.value.CarName;
+import domain.value.CarNameList;
 
 import java.util.Scanner;
 

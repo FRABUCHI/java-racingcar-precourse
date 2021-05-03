@@ -1,6 +1,6 @@
-package racing.value;
+package application.value;
 
-import car.Car;
+import domain.Car;
 
 import java.util.List;
 
@@ -12,7 +12,6 @@ public class Winner {
         for (Car car : winnerList) {
             winner += car.getName() + ", ";
         }
-        System.out.println("Winner: " + winner);
         winner = winner.substring(0, winner.length() - 2);
     }
 

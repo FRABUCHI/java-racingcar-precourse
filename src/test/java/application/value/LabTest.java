@@ -1,4 +1,4 @@
-package racing.value;
+package application.value;
 
 import org.junit.jupiter.api.Test;
 

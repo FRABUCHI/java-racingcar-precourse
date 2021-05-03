@@ -18,11 +18,11 @@ public class RacingTest {
 
     @Test
     void 참가자_명단_입력_및_생성() {
-        Racing racing = new Racing(3);
+        Racing racing = new Racing();
 
-        String input = "weekend week end";
-        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inputStream);
+        String carInput = "weekend week end";
+        InputStream carInputStream = new ByteArrayInputStream(carInput.getBytes());
+        System.setIn(carInputStream);
 
         Cars cars = racing.createCarsList();
         assertEquals("weekendweekend", cars.toString());
@@ -30,19 +30,31 @@ public class RacingTest {
 
     @Test
     void LAB_입력() {
-        Racing racing = new Racing(3);
+        Racing racing = new Racing();
+
+        String labInput = "3";
+        InputStream inputStream = new ByteArrayInputStream(labInput.getBytes());
+        System.setIn(inputStream);
+
+        racing.inputLab();
+
         int lab = racing.getLab();
         assertEquals(3, lab);
     }
 
     @Test
     void LAB_단위_자동차별_전진_또는_멈춤() {
-        Racing racing = new Racing(3);
+        Racing racing = new Racing();
 
-        String input = "weekend week end";
-        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
+        String carInput = "weekend week end";
+        InputStream carInputStream = new ByteArrayInputStream(carInput.getBytes());
+        System.setIn(carInputStream);
+
+        String labInput = "3";
+        InputStream inputStream = new ByteArrayInputStream(labInput.getBytes());
         System.setIn(inputStream);
 
+        racing.inputLab();
         Cars cars = racing.createCarsList();
         do {
             cars = racing.start(cars);
@@ -52,12 +64,17 @@ public class RacingTest {
 
     @Test
     void 우승자_발표() {
-        Racing racing = new Racing(3);
+        Racing racing = new Racing();
 
-        String input = "weekend week end";
-        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
+        String carInput = "weekend week end";
+        InputStream carInputStream = new ByteArrayInputStream(carInput.getBytes());
+        System.setIn(carInputStream);
+
+        String labInput = "3";
+        InputStream inputStream = new ByteArrayInputStream(labInput.getBytes());
         System.setIn(inputStream);
 
+        racing.inputLab();
         Cars cars = racing.createCarsList();
         do {
             cars = racing.start(cars);

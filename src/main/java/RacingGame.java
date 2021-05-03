@@ -4,7 +4,8 @@ import racing.Racing;
 public class RacingGame {
 
     public void start() {
-        Racing racing = new Racing(3);
+        Racing racing = new Racing();
+        racing.inputLab();
         Cars cars = racing.createCarsList();
         do {
             cars = racing.start(cars);

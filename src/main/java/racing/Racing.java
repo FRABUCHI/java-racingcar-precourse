@@ -10,14 +10,10 @@ import java.util.Scanner;
 
 public class Racing {
 
-    private final int lab;
+    private int lab;
     private int currentLab;
 
     private int maxDistance;
-
-    public Racing(int lab) {
-        this.lab = lab;
-    }
 
     public int getLab() {
         return lab;
@@ -83,5 +79,10 @@ public class Racing {
 
     public void announceWinner(Cars cars) {
         System.out.println( getWinner(cars) + "가 최종 우승했습니다.");
+    }
+
+    public void inputLab() {
+        Scanner scanner = new Scanner(System.in);
+        lab = scanner.nextInt();
     }
 }

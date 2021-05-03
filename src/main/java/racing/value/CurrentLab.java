@@ -1,4 +1,4 @@
-package racing;
+package racing.value;
 
 public class CurrentLab {
     private int currentLab = 0;

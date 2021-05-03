@@ -1,4 +1,6 @@
-package racing;
+package racing.value;
+
+import racing.value.CurrentLab;
 
 public class Lab {
 

@@ -1,7 +1,9 @@
-package racing;
+package racing.value;
 
 import car.Car;
 import car.Cars;
+import racing.value.MaxDistance;
+import racing.value.Winner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +19,7 @@ public class WinnerList {
         return new Winner(winnerList);
     }
     private void addWinnerList(Car car, MaxDistance maxDistance) {
-        if (maxDistance.compare(car.getDistance())) {
+        if (maxDistance.compare(car.getMoveDistance())) {
             winnerList.add(car);
         }
     }

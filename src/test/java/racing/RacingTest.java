@@ -2,6 +2,7 @@ package racing;
 
 import car.Cars;
 import org.junit.jupiter.api.Test;
+import racing.value.Lab;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

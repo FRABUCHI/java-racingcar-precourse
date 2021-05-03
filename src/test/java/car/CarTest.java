@@ -3,6 +3,7 @@ package car;
 import car.Car;
 import car.CarStatus;
 import car.Cars;
+import car.value.CarName;
 import org.junit.jupiter.api.Test;
 import racing.Racing;
 
@@ -15,7 +16,7 @@ class CarTest {
 
     @Test
     void runTest() {
-        Car car = new Car("weekend");
+        Car car = new Car(new CarName("weekend"));
         CarStatus carStatus = car.run();
         assertTrue(carStatus == CarStatus.FORWARD || carStatus == CarStatus.STOP);
     }

@@ -2,6 +2,8 @@ package racing;
 
 import car.Car;
 import car.Cars;
+import car.value.CarName;
+import racing.value.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ public class Racing {
         Scanner scanner = new Scanner(System.in);
         List<Car> carList = new ArrayList<Car>();
         for (int i = 0; i < 3; i++) {
-            carList.add(new Car(scanner.next()));
+            carList.add(new Car(new CarName(scanner.next())));
         }
         cars = new Cars(carList);
         return cars;
@@ -37,7 +39,7 @@ public class Racing {
     public Cars start() {
         for (Car car : cars.getCars()) {
             car.run();
-            maxDistance.setMaxDistance(car.getDistance());
+            maxDistance.setMaxDistance(car.getMoveDistance());
         }
         currentLab.addCurrentLab();
         return cars;
@@ -52,7 +54,7 @@ public class Racing {
             System.out.println(car.getName() + ":" + car.getStatus());
         }
         for (Car car : cars.getCars()) {
-            System.out.println("distance("+ car.getName() +"): " + car.getDistance());
+            System.out.println("distance("+ car.getName() +"): " + car.getMoveDistance());
         }
     }
 

@@ -1,17 +1,18 @@
 package car;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cars {
 
-    private final List<Car> cars;
-
-    public Cars(List<Car> cars) {
-        this.cars = cars;
-    }
+    private final List<Car> cars = new ArrayList<Car>();
 
     public List<Car> getCars() {
         return cars;
+    }
+
+    public void addCar(Car car) {
+        cars.add(car);
     }
 
     @Override
@@ -22,4 +23,5 @@ public class Cars {
         }
         return carList.toString();
     }
+
 }

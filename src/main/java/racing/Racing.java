@@ -23,11 +23,10 @@ public class Racing {
 
     public Cars createCarsList() {
         Scanner scanner = new Scanner(System.in);
-        List<Car> carList = new ArrayList<Car>();
+        cars = new Cars();
         for (int i = 0; i < 3; i++) {
-            carList.add(new Car(new CarName(scanner.next())));
+            cars.addCar(new Car(new CarName(scanner.next())));
         }
-        cars = new Cars(carList);
         return cars;
     }
 

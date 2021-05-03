@@ -5,8 +5,8 @@ public class RacingGame {
 
     public void start() {
         Racing racing = new Racing();
-        racing.inputLab();
         racing.createCarsList();
+        racing.inputLab();
         do {
             racing.start();
             racing.showRacingSituation();

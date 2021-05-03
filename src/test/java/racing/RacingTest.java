@@ -25,6 +25,13 @@ public class RacingTest {
         System.setIn(carInputStream);
 
         Cars cars = racing.createCarsList();
+
+        String labInput = "3";
+        InputStream inputStream = new ByteArrayInputStream(labInput.getBytes());
+        System.setIn(inputStream);
+
+        racing.inputLab();
+
         assertEquals("weekendweekend", cars.toString());
     }
 
@@ -38,8 +45,8 @@ public class RacingTest {
 
         racing.inputLab();
 
-        int lab = racing.getLab();
-        assertEquals(3, lab);
+        Lab lab = racing.getLab();
+        assertEquals(3, lab.getLab());
     }
 
     @Test
@@ -50,12 +57,14 @@ public class RacingTest {
         InputStream carInputStream = new ByteArrayInputStream(carInput.getBytes());
         System.setIn(carInputStream);
 
+        Cars cars = racing.createCarsList();
+
         String labInput = "3";
         InputStream inputStream = new ByteArrayInputStream(labInput.getBytes());
         System.setIn(inputStream);
 
         racing.inputLab();
-        Cars cars = racing.createCarsList();
+
         do {
             cars = racing.start(cars);
             racing.showRacingSituation(cars);
@@ -70,12 +79,14 @@ public class RacingTest {
         InputStream carInputStream = new ByteArrayInputStream(carInput.getBytes());
         System.setIn(carInputStream);
 
+        Cars cars = racing.createCarsList();
+
         String labInput = "3";
         InputStream inputStream = new ByteArrayInputStream(labInput.getBytes());
         System.setIn(inputStream);
 
         racing.inputLab();
-        Cars cars = racing.createCarsList();
+
         do {
             cars = racing.start(cars);
             racing.showRacingSituation(cars);

@@ -10,46 +10,39 @@ import java.util.Scanner;
 
 public class Racing {
 
-    private int lab;
-    private int currentLab;
+    private Lab lab;
+    private CurrentLab currentLab = new CurrentLab();
+    private MaxDistance maxDistance = new MaxDistance();
 
-    private int maxDistance;
-
-    public int getLab() {
+    public Lab getLab() {
         return lab;
     }
 
     public Cars createCarsList() {
         Scanner scanner = new Scanner(System.in);
         List<Car> carList = new ArrayList<Car>();
-        for (int i = 0; i < lab; i++) {
-            String temp = scanner.next();
-            carList.add(new Car(temp));
+        for (int i = 0; i < 3; i++) {
+            carList.add(new Car(scanner.next()));
         }
         return new Cars(carList);
+    }
+
+    public void inputLab() {
+        Scanner scanner = new Scanner(System.in);
+        lab = new Lab(scanner.nextInt());
     }
 
     public Cars start(Cars cars) {
         for (Car car : cars.getCars()) {
             car.run();
-            setMaxDistance(car.getDistance());
+            maxDistance.setMaxDistance(car.getDistance());
         }
-        addCurrentLab();
+        currentLab.addCurrentLab();
         return cars;
     }
 
-    public void setMaxDistance(int distance) {
-        if (distance >= maxDistance) {
-            maxDistance = distance;
-        }
-    }
-
-    public void addCurrentLab() {
-        currentLab = currentLab + 1;
-    }
-
     public boolean isNotOver() {
-        return currentLab != lab;
+        return !lab.isSame(currentLab);
     }
 
     public void showRacingSituation(Cars cars) {
@@ -70,7 +63,7 @@ public class Racing {
     }
 
     private StringBuilder createWinnerNameString(StringBuilder carNames, Car car) {
-        if (car.getDistance() == maxDistance) {
+        if (maxDistance.compare(car.getDistance())) {
             carNames.append(car.getName())
                     .append(", ");
         }
@@ -81,8 +74,4 @@ public class Racing {
         System.out.println( getWinner(cars) + "가 최종 우승했습니다.");
     }
 
-    public void inputLab() {
-        Scanner scanner = new Scanner(System.in);
-        lab = scanner.nextInt();
-    }
 }

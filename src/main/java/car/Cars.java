@@ -1,7 +1,5 @@
 package car;
 
-import car.Car;
-
 import java.util.List;
 
 public class Cars {

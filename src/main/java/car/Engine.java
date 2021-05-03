@@ -1,7 +1,5 @@
 package car;
 
-import car.CarStatus;
-
 import java.util.Random;
 
 public class Engine {

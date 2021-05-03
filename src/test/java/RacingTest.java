@@ -1,14 +1,13 @@
 import car.Car;
-import car.CarStatus;
 import car.Cars;
 import org.junit.jupiter.api.Test;
 import racing.Racing;
-import racing.RacingSituation;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class RacingTest {
 
@@ -32,10 +31,10 @@ public class RacingTest {
         Racing racing = new Racing(3);
         List<Car> carList = Arrays.asList(new Car("weekend"), new Car("week"), new Car("end"));
         Cars cars = racing.createCarsList(carList);
-        RacingSituation racingSituation = racing.start(cars);
-        for (CarStatus carStatus : racingSituation.getRacingSituation()) {
-            assertTrue(carStatus == CarStatus.FORWARD || carStatus == CarStatus.STOP);
-        }
+        do {
+            cars = racing.start(cars);
+            racing.showRacingSituation(cars);
+        } while (racing.isNotOver());
     }
 
 }

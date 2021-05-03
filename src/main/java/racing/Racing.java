@@ -52,16 +52,13 @@ public class Racing {
         for (Car car : cars.getCars()) {
             System.out.println(car.getName() + ":" + car.getStatus());
         }
-        for (Car car : cars.getCars()) {
-            System.out.println("distance("+ car.getName() +"): " + car.getMoveDistance());
-        }
+        System.out.println();
     }
 
-
-    public void announceWinner() {
+    public Winner getWinner() {
         WinnerList winnerList = new WinnerList();
         winner = winnerList.createWinnerList(cars, maxDistance);
-        System.out.println( winner.getWinner() + "가 최종 우승했습니다.");
+        return winner;
     }
 
 }

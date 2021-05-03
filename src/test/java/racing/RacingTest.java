@@ -87,7 +87,7 @@ public class RacingTest {
             racing.start();
             racing.showRacingSituation();
         } while (racing.isNotOver());
-        racing.announceWinner();
+        racing.getWinner();
     }
 
 

@@ -1,5 +1,6 @@
 package car;
 
+import car.value.CarStatus;
 import car.value.MoveDistance;
 import car.value.CarName;
 import car.value.Rpm;

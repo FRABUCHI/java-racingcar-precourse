@@ -2,10 +2,12 @@ package car.value;
 
 public class CarName {
 
-    private final String carName;
+    private String carName;
 
     public CarName(String carName) {
-        this.carName = carName;
+        if (0 < carName.length() && carName.length() <= 5) {
+            this.carName = carName;
+        }
     }
 
     public String getCarName() {

@@ -1,7 +1,5 @@
 package car.value;
 
-import car.CarStatus;
-
 import java.util.Random;
 
 public class Rpm {

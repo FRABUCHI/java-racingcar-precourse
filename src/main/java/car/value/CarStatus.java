@@ -1,4 +1,4 @@
-package car;
+package car.value;
 
 public enum CarStatus {
     FORWARD, STOP;

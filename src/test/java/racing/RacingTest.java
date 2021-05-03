@@ -1,35 +1,31 @@
 package racing;
 
+import car.CarNames;
 import car.Cars;
+import car.value.CarNameList;
 import org.junit.jupiter.api.Test;
 import racing.value.Lab;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RacingTest {
 
     @Test
-    void 참가자_명단_입력_및_생성() {
+    void 참가자_명단_입력_및_생성_정상() {
         Racing racing = new Racing();
 
-        String carInput = "weekend week end";
+        String carInput = "wkend,week,end";
         InputStream carInputStream = new ByteArrayInputStream(carInput.getBytes());
         System.setIn(carInputStream);
 
-        Cars cars = racing.createCarsList();
+        CarNames carNames = racing.inputCarsList();
 
-        String labInput = "3";
-        InputStream inputStream = new ByteArrayInputStream(labInput.getBytes());
-        System.setIn(inputStream);
-
-        racing.inputLab();
-
-        assertEquals("weekendweekend", cars.toString());
+        assertEquals("wkend, week, end, ", carNames.toString());
     }
+
 
     @Test
     void LAB_입력() {
@@ -53,7 +49,7 @@ public class RacingTest {
         InputStream carInputStream = new ByteArrayInputStream(carInput.getBytes());
         System.setIn(carInputStream);
 
-        Cars cars = racing.createCarsList();
+        racing.inputCarsList();
 
         String labInput = "3";
         InputStream inputStream = new ByteArrayInputStream(labInput.getBytes());
@@ -75,7 +71,7 @@ public class RacingTest {
         InputStream carInputStream = new ByteArrayInputStream(carInput.getBytes());
         System.setIn(carInputStream);
 
-        Cars cars = racing.createCarsList();
+        racing.inputCarsList();
 
         String labInput = "3";
         InputStream inputStream = new ByteArrayInputStream(labInput.getBytes());

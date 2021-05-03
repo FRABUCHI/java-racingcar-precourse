@@ -1,3 +1,4 @@
+import car.CarNames;
 import car.Cars;
 import racing.Racing;
 import racing.value.Winner;
@@ -7,16 +8,24 @@ public class RacingGame {
     Racing racing = new Racing();
 
     public void start() {
-        createCarsList();
+        inputCarsList();
         inputLab();
         gameStart();
         announceWinner();
     }
 
-    private void createCarsList() {
-        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        racing.createCarsList();
-    };
+    private void inputCarsList() {
+        CarNames carNames;
+        do {
+            System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+            carNames = racing.inputCarsList();
+        } while(!isValidCarNames(carNames));
+        racing.createCars(carNames);
+    }
+
+    private boolean isValidCarNames(CarNames carNames) {
+        return carNames.isValid();
+    }
 
     private void gameStart() {
         System.out.println("실행 결과");

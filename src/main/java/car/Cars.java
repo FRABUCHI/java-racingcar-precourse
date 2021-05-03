@@ -15,13 +15,4 @@ public class Cars {
         cars.add(car);
     }
 
-    @Override
-    public String toString() {
-        StringBuilder carList = new StringBuilder();
-        for (Car car : cars) {
-            carList.append(car.getName());
-        }
-        return carList.toString();
-    }
-
 }

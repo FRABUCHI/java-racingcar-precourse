@@ -1,12 +1,12 @@
 package racing;
 
 import car.Car;
+import car.CarNames;
 import car.Cars;
 import car.value.CarName;
+import car.value.CarNameList;
 import racing.value.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Racing {
@@ -21,13 +21,17 @@ public class Racing {
         return lab;
     }
 
-    public Cars createCarsList() {
+    public CarNames inputCarsList() {
         Scanner scanner = new Scanner(System.in);
         cars = new Cars();
-        for (int i = 0; i < 3; i++) {
-            cars.addCar(new Car(new CarName(scanner.next())));
+        return new CarNames(scanner.nextLine());
+    }
+
+    public void createCars(CarNames carNames) {
+        CarNameList carNameList = carNames.getCarNameList();
+        for (CarName carName : carNameList.getCarNameList()) {
+            cars.addCar(new Car(carName));
         }
-        return cars;
     }
 
     public void inputLab() {

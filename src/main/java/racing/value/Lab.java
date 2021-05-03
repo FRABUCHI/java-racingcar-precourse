@@ -20,5 +20,7 @@ public class Lab {
         return lab;
     }
 
-
+    public boolean isValid() {
+        return lab > 0;
+    }
 }

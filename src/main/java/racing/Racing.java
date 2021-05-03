@@ -34,9 +34,10 @@ public class Racing {
         }
     }
 
-    public void inputLab() {
+    public Lab inputLab() {
         Scanner scanner = new Scanner(System.in);
         lab = new Lab(scanner.nextInt());
+        return lab;
     }
 
     public Cars start() {

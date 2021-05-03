@@ -1,6 +1,7 @@
 import car.CarNames;
 import car.Cars;
 import racing.Racing;
+import racing.value.Lab;
 import racing.value.Winner;
 
 public class RacingGame {
@@ -27,6 +28,18 @@ public class RacingGame {
         return carNames.isValid();
     }
 
+    private void inputLab() {
+        Lab lab;
+        do {
+            System.out.println("시도할 회수는 몇회인가요?");
+            lab = racing.inputLab();
+        } while (!isValidLab(lab));
+    }
+
+    private boolean isValidLab(Lab lab) {
+        return lab.isValid();
+    }
+
     private void gameStart() {
         System.out.println("실행 결과");
         do {
@@ -34,11 +47,6 @@ public class RacingGame {
             racing.showRacingSituation();
         } while (racing.isNotOver());
     }
-
-    private void inputLab() {
-        System.out.println("시도할 회수는 몇회인가요?");
-        racing.inputLab();
-    };
 
     private void announceWinner() {
         Winner winner = racing.getWinner();

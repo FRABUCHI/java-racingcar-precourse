@@ -1,7 +1,7 @@
 package car;
 
-import car.value.CarStatus;
 import car.value.CarName;
+import car.value.CarStatus;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

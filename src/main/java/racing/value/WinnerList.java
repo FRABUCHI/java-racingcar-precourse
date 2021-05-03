@@ -2,8 +2,6 @@ package racing.value;
 
 import car.Car;
 import car.Cars;
-import racing.value.MaxDistance;
-import racing.value.Winner;
 
 import java.util.ArrayList;
 import java.util.List;

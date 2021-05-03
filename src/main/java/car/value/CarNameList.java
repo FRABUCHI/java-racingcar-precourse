@@ -16,10 +16,4 @@ public class CarNameList {
         carNameList.add(carName);
     }
 
-    @Override
-    public String toString() {
-        return "CarNameList{" +
-                "carNameList=" + carNameList +
-                '}';
-    }
 }

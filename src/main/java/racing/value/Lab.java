@@ -1,7 +1,5 @@
 package racing.value;
 
-import racing.value.CurrentLab;
-
 public class Lab {
 
     private int lab;

@@ -3,9 +3,6 @@ package car;
 import car.value.CarName;
 import car.value.CarNameList;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class CarNames {
 
     private String[] carNames;
@@ -32,7 +29,6 @@ public class CarNames {
     }
 
     private boolean checkValidation(String carName) {
-        System.out.println("CarName: "+ carName +" / "+carName.isEmpty());
         if (carName.length() > 5) {
             return false;
         }

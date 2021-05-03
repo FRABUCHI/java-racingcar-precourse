@@ -1,8 +1,6 @@
 package racing;
 
 import car.CarNames;
-import car.Cars;
-import car.value.CarNameList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import racing.value.Lab;
@@ -10,7 +8,7 @@ import racing.value.Lab;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RacingTest {
 

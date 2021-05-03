@@ -3,7 +3,10 @@ package racing;
 import car.Car;
 import car.Cars;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Racing {
 
@@ -20,7 +23,13 @@ public class Racing {
         return lab;
     }
 
-    public Cars createCarsList(List<Car> carList) {
+    public Cars createCarsList() {
+        Scanner scanner = new Scanner(System.in);
+        List<Car> carList = new ArrayList<Car>();
+        for (int i = 0; i < lab; i++) {
+            String temp = scanner.next();
+            carList.add(new Car(temp));
+        }
         return new Cars(carList);
     }
 
@@ -75,5 +84,4 @@ public class Racing {
     public void announceWinner(Cars cars) {
         System.out.println( getWinner(cars) + "가 최종 우승했습니다.");
     }
-
 }

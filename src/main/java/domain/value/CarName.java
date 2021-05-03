@@ -11,6 +11,9 @@ public class CarName {
     }
 
     public String getCarName() {
+        if (carName == null) {
+            return " ";
+        }
         return carName;
     }
 }

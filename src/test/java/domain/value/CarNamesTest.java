@@ -1,5 +1,6 @@
 package domain.value;
 
+import application.value.IsValid;
 import domain.CarNames;
 import org.junit.jupiter.api.Test;
 
@@ -9,17 +10,17 @@ class CarNamesTest {
 
     @Test
     void 공백_유효검사() {
+        IsValid isValid = new IsValid(true);
         CarNames carNames = new CarNames("abc,     ,cc");
-        System.out.println(carNames.toString());
-        boolean result = carNames.isValid();
-        assertFalse(result);
-
+        carNames.isValid();
+        assertFalse(isValid.getIsValid());
     }
 
     @Test
     void Null_유효검사() {
+        IsValid isValid = new IsValid(true);
         CarNames carNames = new CarNames("");
-        boolean result = carNames.isValid();
-        assertFalse(result);
+        carNames.isValid();
+        assertFalse(isValid.getIsValid());
     }
 }

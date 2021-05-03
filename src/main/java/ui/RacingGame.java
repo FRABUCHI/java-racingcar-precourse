@@ -1,9 +1,12 @@
 package ui;
 
+import application.value.IsValid;
 import domain.CarNames;
 import application.Racing;
 import application.value.Lab;
 import application.value.Winner;
+import domain.value.CarName;
+import domain.value.CarNameList;
 
 public class RacingGame {
 
@@ -21,12 +24,14 @@ public class RacingGame {
         do {
             System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
             carNames = racing.inputCarsList();
-        } while(!isValidCarNames(carNames));
+        } while(!isValidCarNames(carNames).getIsValid());
         racing.createCars(carNames);
     }
 
-    private boolean isValidCarNames(CarNames carNames) {
-        return carNames.isValid();
+    private IsValid isValidCarNames(CarNames carNames) {
+        IsValid isValid = new IsValid(true);
+        carNames.isValid();
+        return isValid;
     }
 
     private void inputLab() {

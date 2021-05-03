@@ -1,5 +1,6 @@
 package domain;
 
+import application.value.IsValid;
 import domain.value.CarName;
 import domain.value.CarNameList;
 
@@ -19,23 +20,28 @@ public class CarNames {
         return carNameList;
     }
 
-    public boolean isValid() {
-        for (String carName : carNames) {
-            if (!checkValidation(carName)) {
-                return false;
-            }
+    public IsValid isValid() {
+        IsValid isValid = new IsValid(true);
+        CarNameList carNameList = getCarNameList();
+        for (CarName carName : carNameList.getCarNameList()) {
+            isValid.setIsValid(checkValidation(carName).getIsValid());
         }
-        return true;
+        return isValid;
     }
 
-    private boolean checkValidation(String carName) {
-        if (carName.length() > 5) {
-            return false;
+    private IsValid checkValidation(CarName carName) {
+        IsValid isValid = new IsValid(true);
+
+        if (carName.getCarName().isBlank()){
+            isValid.setIsValid(false);
         }
-        if (carName.isBlank()){
-            return false;
+
+        if (carName.getCarName().length() > 5) {
+            isValid.setIsValid(false);
         }
-        return true;
+
+
+        return isValid;
     }
 
     @Override
